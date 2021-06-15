@@ -30,5 +30,21 @@ public class PersonService {
 	public Iterable<Person> findAllPersons(){
 		return personRepository.findAll();
 	}
+
+	public Person findOnePerson(Long id) {
+		return personRepository.findById(id).get();
+	}
+	
+	public Person createPerson(Person person) {
+		return personRepository.save(person);
+	}
+
+	public void deletePerson(Long id) {
+		personRepository.deleteById(id);
+	}
+
+	public Person save(Person person) {
+		return personRepository.save(person);
+	}
 	
 }

@@ -31,5 +31,21 @@ public class MedicalRecordService {
 	public Iterable<MedicalRecord> findAllMedicalRecords(){
 		return medicalRecordRepository.findAll();
 	}
+
+	public MedicalRecord findOneMedicalRecord(Long id) {
+		return medicalRecordRepository.findById(id).get();
+	}
+	
+	public MedicalRecord createMedicalRecord(MedicalRecord medicalRecord) {
+		return medicalRecordRepository.save(medicalRecord);
+	}
+
+	public void deleteMedicalRecord(Long id) {
+		medicalRecordRepository.deleteById(id);	
+	}
+
+	public MedicalRecord save(MedicalRecord medicalRecord) {
+		return medicalRecordRepository.save(medicalRecord);
+	}
 	
 }
